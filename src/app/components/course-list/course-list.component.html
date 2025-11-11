@@ -1,0 +1,41 @@
+<div class="course-list">
+  <h2>Catálogo de Cursos</h2>
+
+  <div class="filter-container">
+    <label for="filter">Filtrar por nivel:</label>
+    <select id="filter" [(ngModel)]="selectedLevel" (change)="filterByLevel()">
+      <option value="todos">Todos</option>
+      <option value="BEGINNER">Principiante</option>
+      <option value="INTERMEDIATE">Intermedio</option>
+      <option value="ADVANCED">Avanzado</option>
+    </select>
+  </div>
+
+  <div *ngIf="filteredCourses.length > 0; else noCourses" class="courses-grid">
+    <div *ngFor="let course of filteredCourses" class="course-card" (click)="goToDetail(course.id)">
+      
+      <div class="card-header">
+        <h3 class="course-title">{{ course.title }}</h3>
+        <span class="level-badge" [ngClass]="course.difficulty.toLowerCase()">
+          {{ course.difficulty }}
+        </span>
+      </div>
+
+      <p class="instructor"><strong>Instructor:</strong> {{ course.instructor }}</p>
+
+      <div class="course-info">
+        <span class="info-item">
+          <i class="fas fa-clock"></i> {{ course.durationHours }} hrs
+        </span>
+        <span class="info-item">
+          <i class="fas fa-users"></i> {{ course.enrolledCount }}/{{ course.capacity }}
+        </span>
+      </div>
+      
+    </div>
+  </div>
+
+  <ng-template #noCourses>
+    <p class="no-courses-msg">No hay cursos disponibles.</p>
+  </ng-template>
+</div>

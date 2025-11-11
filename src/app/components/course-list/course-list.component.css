@@ -1,0 +1,100 @@
+/* Contenedor principal */
+.course-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Selector de filtro */
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Grid de cursos */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas */
+.course-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Header de la tarjeta */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.course-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Badges de nivel */
+.level-badge {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.level-badge.beginner {
+  background-color: #4caf50; /* verde */
+}
+
+.level-badge.intermediate {
+  background-color: #ff9800; /* naranja */
+}
+
+.level-badge.advanced {
+  background-color: #f44336; /* rojo */
+}
+
+/* Instructor */
+.instructor {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* Info adicional */
+.course-info {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.info-item i {
+  margin-right: 5px;
+  color: #888;
+}
+
+/* Mensaje de no cursos */
+.no-courses-msg {
+  text-align: center;
+  font-weight: 500;
+  margin-top: 20px;
+  color: #666;
+}

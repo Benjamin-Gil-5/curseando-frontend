@@ -1,0 +1,49 @@
+<div *ngIf="course" class="course-detail">
+
+  <div class="top-bar">
+    <button class="btn-back" (click)="goBack()">← Volver a los cursos</button>
+  </div>
+
+  <div class="course-card">
+    <h2 class="course-title">{{ course.title }}</h2>
+    <p class="description">{{ course.description }}</p>
+
+    <div *ngIf="course.modules" class="modules">
+      <h4>Contenido del curso</h4>
+      <pre>{{ course.modules }}</pre>
+    </div>
+
+    <div class="course-info">
+      <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+      <p><strong>Duración:</strong> {{ course.durationHours }} horas</p>
+      <p><strong>Nivel:</strong> {{ course.difficulty }}</p>
+      <p><strong>Cupos:</strong> {{ course.enrolledCount }}/{{ course.capacity }}</p>
+    </div>
+  </div>
+
+  <div *ngIf="course.enrolledCount < course.capacity || allowLastSuccess; else fullCourse" class="enroll-section">
+    <h3>Inscribite al curso</h3>
+    <form [formGroup]="form" (ngSubmit)="onEnroll()" class="enroll-form">
+      <div class="form-group">
+        <label for="name">Nombre completo</label>
+        <input id="name" formControlName="name" type="text" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input id="email" formControlName="email" type="email" />
+      </div>
+
+      <button type="submit" class="btn-enroll">Inscribirme</button>
+    </form>
+
+    <p *ngIf="message" class="alert success">{{ message }}</p>
+    <p *ngIf="error" class="alert error">{{ error }}</p>
+  </div>
+
+  <!-- Mensaje si el curso está completo -->
+  <ng-template #fullCourse>
+    <p class="alert error">Lo sentimos, este curso ya está completo.</p>
+  </ng-template>
+
+</div>

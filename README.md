@@ -1,27 +1,94 @@
-# CurseandoFrontend
+# Curseando Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
+Interfaz web desarrollada en **Angular 17** para la plataforma de gestión e inscripción de cursos online **Curseando**.  
+Permite listar, filtrar e inscribirse en cursos a través de una API REST provista por el backend en Spring Boot.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologías utilizadas
 
-## Code scaffolding
+- **Angular 17**
+- **TypeScript**
+- **HTML5 / CSS3 (responsive)**
+- **Font Awesome** (iconografía)
+- **Reactive Forms** (validación de formularios)
+- **HttpClient** (consumo de API REST)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+##  Instalación y ejecución
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+###  Requisitos previos
 
-## Running unit tests
+- Node.js (v18 o superior)
+- Angular CLI (`npm install -g @angular/cli`)
+- Backend en ejecución (por defecto en `http://localhost:8080`)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+###  Pasos de ejecución
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clonar el repositorio:
+   git clone https://github.com/tuusuario/curseando-frontend.git
+   cd curseando-frontend
 
-## Further help
+2. Instalar dependencias:
+   npm install
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. Configurar el entorno (opcional):
+   El archivo `src/environments/environment.ts` contiene la URL base del backend:
+   ```typescript
+   export const environment = {
+     production: false,
+     apiUrl: 'http://localhost:8080/api'
+   };
+   ```
+
+4. Ejecutar la aplicación:
+   ng serve
+
+5. Abrir en el navegador:
+   http://localhost:4200
+
+---
+
+## 🧱 Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── course-list/
+│   │   │   ├── course-list.component.{ts,html,css}
+│   │   └── course-detail/
+│   │       ├── course-detail.component.{ts,html,css}
+│   ├── models/
+│   │   └── course.ts
+│   ├── services/
+│   │   └── course.service.ts
+│   ├── app.routes.ts
+│   └── app.component.{ts,html,css}
+│
+├── environments/
+│   └── environment.ts
+│
+├── styles.css
+└── index.html
+```
+
+---
+
+## 💡 Funcionalidades principales
+
+✅ **Listado de cursos** con filtro por nivel.  
+✅ **Detalle de curso** con descripción, módulos, instructor y cupos.  
+✅ **Formulario de inscripción** con validación reactiva.  
+✅ **Manejo dinámico de cupos:** el formulario solo aparece si hay lugares disponibles.  
+✅ **Mensajes de éxito o error** al intentar inscribirse.  
+✅ **Diseño limpio y responsivo**, con tipografía *Inter* y colores suaves.
+
+---
+
+## Autor
+
+**Esteban Sergio Benjamín Gil Morales**  
