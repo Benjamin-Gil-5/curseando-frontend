@@ -1,0 +1,30 @@
+# Dependencias
+node_modules
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Archivos de build locales
+dist
+tmp
+out-tsc
+coverage
+
+# Archivos del entorno
+.env
+.env.*
+!.env.example
+
+# Configuración del editor/IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
