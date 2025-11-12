@@ -26,29 +26,31 @@ Permite listar, filtrar e inscribirse en cursos a través de una API REST provis
 
 ---
 
-###  Pasos de ejecución
+## Instalación y ejecución local
 
 1. Clonar el repositorio:
-   git clone https://github.com/tuusuario/curseando-frontend.git
-   cd curseando-frontend
+
+git clone https://github.com/Benjamin-Gil-5/curseando-frontend.git
+cd curseando-frontend
 
 2. Instalar dependencias:
-   npm install
 
-3. Configurar el entorno (opcional):
-   El archivo `src/environments/environment.ts` contiene la URL base del backend:
-   ```typescript
-   export const environment = {
-     production: false,
-     apiUrl: 'http://localhost:8080/api'
-   };
-   ```
+npm install
 
-4. Ejecutar la aplicación:
-   ng serve
+3. Configurar el entorno:
 
-5. Abrir en el navegador:
-   http://localhost:4200
+Editar src/environments/environment.ts y asegurarse que apiUrl apunte a tu backend local o remoto:
+
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8080/api'
+};
+
+4. Ejecutar la app en modo desarrollo:
+
+ng serve
+
+5. Acceder desde el navegador en: http://localhost:4200
 
 ---
 
@@ -88,6 +90,13 @@ src/
 ✅ **Diseño limpio y responsivo**, con tipografía *Inter* y colores suaves.
 
 ---
+
+## Capturas de pantalla
+<img width="1916" height="523" alt="image" src="https://github.com/user-attachments/assets/1d95066d-8031-48a9-887c-cdb83219a9fc" />
+
+<img width="1901" height="1029" alt="image" src="https://github.com/user-attachments/assets/e7a4303a-e730-4f20-b75a-dcebaaa5ba4c" />
+
+
 
 ## Autor
 
